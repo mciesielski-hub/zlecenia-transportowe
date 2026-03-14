@@ -10,57 +10,38 @@ TEMPLATES = {
     'Landsberg': {
         'client': DEFAULT_CLIENT,
         'price': DEFAULT_PRICE,
-        'load_1_name': 'Dachser Koninko',
-        'load_1_street': 'Drukarska',
-        'load_1_city': '60-023; Koninko; PL',
         'via_text': 'Slubice',
-        'unload_1_name': 'Dachser Radeburg',
-        'unload_1_street': 'Thomas-Dachser-Strasse 1',
-        'unload_1_city': '01471; Radeburg; DE',
-        'unload_2_name': 'Dachser Landsberg',
-        'unload_2_street': 'Brehnaer Strasse 4',
-        'unload_2_city': '06188; Landsberg; DE',
-        'load_2_name': 'Dachser Landsberg',
-        'load_2_street': 'Brehnaer Strasse 4',
-        'load_2_city': '06188; Landsberg; DE',
-        'unload_3_name': 'Dachser Schonefeld',
-        'unload_3_street': 'Thomas-Dachser-Allee 2',
-        'unload_3_city': '12529; Schonefeld; DE',
-        'unload_4_name': 'Dachser Koninko',
-        'unload_4_street': 'Drukarska',
-        'unload_4_city': '60-023; Koninko; PL',
-        't1': '18:30',
-        't2': '02:30',
-        't3': '05:00',
-        't4': '18:00',
+        'stops': [
+            {'type': 'ZALADUNEK',   'name': 'Dachser Koninko',    'street': 'Drukarska',             'city': '60-023; Koninko; PL',      'time': '18:30', 'day_offset': 0},
+            {'type': 'ROZLADUNEK', 'name': 'Dachser Radeburg',    'street': 'Thomas-Dachser-Strasse 1','city': '01471; Radeburg; DE',      'time': '02:30', 'day_offset': 1},
+            {'type': 'ROZLADUNEK', 'name': 'Dachser Landsberg',   'street': 'Brehnaer Strasse 4',    'city': '06188; Landsberg; DE',     'time': '05:00', 'day_offset': 1},
+            {'type': 'ZALADUNEK',  'name': 'Dachser Landsberg',   'street': 'Brehnaer Strasse 4',    'city': '06188; Landsberg; DE',     'time': '05:00', 'day_offset': 1},
+            {'type': 'ROZLADUNEK', 'name': 'Dachser Schonefeld',  'street': 'Thomas-Dachser-Allee 2','city': '12529; Schonefeld; DE',    'time': '18:00', 'day_offset': 1},
+            {'type': 'ROZLADUNEK (POWROT)', 'name': 'Dachser Koninko', 'street': 'Drukarska',        'city': '60-023; Koninko; PL',      'time': '',      'day_offset': 2},
+        ]
     },
     'DSV Eupen': {
         'client': 'DSV ROAD NV, BE, 0404507618',
         'price': '692 EUR',
         'vehicle_reg': 'OKR2CN5',
-        'load_1_name': 'Schenker',
-        'load_1_street': 'Siebeponisweg 9',
-        'load_1_city': '4700; Eupen; BE',
         'via_text': 'Neunkirchen',
-        'unload_1_name': 'Schenker Deutschland AG',
-        'unload_1_street': 'Boxbergweg 6',
-        'unload_1_city': '66538; Neunkirchen; DE',
-        'unload_2_name': 'Schenker',
-        'unload_2_street': 'Siebeponisweg 9',
-        'unload_2_city': '4700; Eupen; BE',
-        'load_2_name': '',
-        'load_2_street': '',
-        'load_2_city': '',
-        'unload_3_name': '',
-        'unload_3_street': '',
-        'unload_3_city': '',
-        'unload_4_name': '',
-        'unload_4_street': '',
-        'unload_4_city': '',
-        't1': '13:10',
-        't2': '21:10',
-        't3': '13:10',
-        't4': '',
+        'stops': [
+            {'type': 'ZALADUNEK',          'name': 'Schenker',               'street': 'Siebeponisweg 9', 'city': '4700; Eupen; BE',           'time': '13:10', 'day_offset': 0},
+            {'type': 'PRZELADUNEK',        'name': 'Schenker Deutschland AG','street': 'Boxbergweg 6',    'city': '66538; Neunkirchen; DE',    'time': '21:10', 'day_offset': 1},
+            {'type': 'ROZLADUNEK (POWROT)','name': 'Schenker',               'street': 'Siebeponisweg 9', 'city': '4700; Eupen; BE',           'time': '13:10', 'day_offset': 2},
+        ]
+    },
+    'Dachser Mouscron': {
+        'client': 'SA DACHSER Belgium, BE 7700 Mouscron, VAT: BE 0415394184',
+        'price': '1626 EUR',
+        'via_text': 'Alsdorf / Koln',
+        'stops': [
+            {'type': 'ZALADUNEK',   'name': 'Dachser Mouscron', 'street': 'Hansestrasse 52',        'city': '7700; Mouscron; BE',        'time': '21:00', 'day_offset': 0},
+            {'type': 'ROZLADUNEK', 'name': 'Dachser Alsdorf',   'street': 'Thomas-Dachser-Strasse 1','city': '52477; Alsdorf; DE',       'time': '01:30', 'day_offset': 1},
+            {'type': 'ROZLADUNEK', 'name': 'Dachser Koln',      'street': 'Rue du Berger',          'city': '51149; Koln; DE',           'time': '03:00', 'day_offset': 1},
+            {'type': 'ZALADUNEK',  'name': 'Dachser Koln',      'street': 'Rue du Berger',          'city': '51149; Koln; DE',           'time': '19:00', 'day_offset': 1},
+            {'type': 'ROZLADUNEK (POWROT)', 'name': 'Dachser Wissous', 'street': 'Hansestrasse 52', 'city': '91320; Wissous; FR',        'time': '02:30', 'day_offset': 2},
+        ]
     }
 }
 
@@ -70,67 +51,21 @@ def is_workday(d):
 def generate_order(template_name, start_date, day_num):
     t = TEMPLATES[template_name]
     load_date = start_date + timedelta(days=day_num)
-    unload_date = load_date + timedelta(days=1)
     ref = load_date.strftime('%Y-%m-%d')
 
     vehicle_line = ''
     if t.get('vehicle_reg'):
         vehicle_line = f'Nr rejestracyjny: {t["vehicle_reg"]}\n'
 
-    stops = f'''ZALADUNEK 1:
-  Firma: {t['load_1_name']}
-  Ulica: {t['load_1_street']}
-  Miasto: {t['load_1_city']}
-  Godzina: {t['t1']} ({load_date.strftime('%d.%m.%Y')})
-
-PRZELADUNEK / ROZLADUNEK 1:
-  Firma: {t['unload_1_name']}
-  Ulica: {t['unload_1_street']}
-  Miasto: {t['unload_1_city']}
-  Godzina: {t['t2']} ({unload_date.strftime('%d.%m.%Y') if t['t2'] else load_date.strftime('%d.%m.%Y')})
-'''
-
-    if t.get('load_2_name'):
-        stops += f'''
-ZALADUNEK 2:
-  Firma: {t['load_2_name']}
-  Ulica: {t['load_2_street']}
-  Miasto: {t['load_2_city']}
-  Godzina: {t['t3']} ({unload_date.strftime('%d.%m.%Y')})
-'''
-
-    if t.get('unload_2_name') and not t.get('load_2_name'):
-        stops += f'''
-ROZLADUNEK 2 (POWROT):
-  Firma: {t['unload_2_name']}
-  Ulica: {t['unload_2_street']}
-  Miasto: {t['unload_2_city']}
-  Godzina: {t['t3']} ({unload_date.strftime('%d.%m.%Y')})
-'''
-    elif t.get('unload_2_name'):
-        stops += f'''
-ROZLADUNEK 2:
-  Firma: {t['unload_2_name']}
-  Ulica: {t['unload_2_street']}
-  Miasto: {t['unload_2_city']}
-  Godzina: {t['t3']} ({unload_date.strftime('%d.%m.%Y')})
-'''
-
-    if t.get('unload_3_name'):
-        stops += f'''
-ROZLADUNEK 3:
-  Firma: {t['unload_3_name']}
-  Ulica: {t['unload_3_street']}
-  Miasto: {t['unload_3_city']}
-  Godzina: {t['t4']} ({unload_date.strftime('%d.%m.%Y')})
-'''
-
-    if t.get('unload_4_name'):
-        stops += f'''
-ROZLADUNEK 4 (POWROT):
-  Firma: {t['unload_4_name']}
-  Ulica: {t['unload_4_street']}
-  Miasto: {t['unload_4_city']}
+    stops_text = ''
+    for i, stop in enumerate(t['stops'], 1):
+        stop_date = load_date + timedelta(days=stop['day_offset'])
+        time_str = f'  Godzina: {stop["time"]} ({stop_date.strftime("%d.%m.%Y")})\n' if stop['time'] else ''
+        stops_text += f'''{stop['type']} {i}:
+  Firma: {stop['name']}
+  Ulica: {stop['street']}
+  Miasto: {stop['city']}
+{time_str}
 '''
 
     content = f'''ZLECENIE TRANSPORTOWE
@@ -141,8 +76,7 @@ Referencja: {ref}
 Klient: {t['client']}
 {vehicle_line}Cena: {t['price']}
 
-{stops}
-TRASA: {t['load_1_city']} -> via {t['via_text']} -> {t['unload_1_city']} -> powrot
+{stops_text}TRASA: via {t['via_text']}
 '''
     return ref, content
 
