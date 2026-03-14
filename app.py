@@ -33,6 +33,34 @@ TEMPLATES = {
         't2': '02:30',
         't3': '05:00',
         't4': '18:00',
+    },
+    'DSV Eupen': {
+        'client': 'DSV ROAD NV, BE, 0404507618',
+        'price': '692 EUR',
+        'vehicle_reg': 'OKR2CN5',
+        'load_1_name': 'Schenker',
+        'load_1_street': 'Siebeponisweg 9',
+        'load_1_city': '4700; Eupen; BE',
+        'via_text': 'Neunkirchen',
+        'unload_1_name': 'Schenker Deutschland AG',
+        'unload_1_street': 'Boxbergweg 6',
+        'unload_1_city': '66538; Neunkirchen; DE',
+        'unload_2_name': 'Schenker',
+        'unload_2_street': 'Siebeponisweg 9',
+        'unload_2_city': '4700; Eupen; BE',
+        'load_2_name': '',
+        'load_2_street': '',
+        'load_2_city': '',
+        'unload_3_name': '',
+        'unload_3_street': '',
+        'unload_3_city': '',
+        'unload_4_name': '',
+        'unload_4_street': '',
+        'unload_4_city': '',
+        't1': '13:10',
+        't2': '21:10',
+        't3': '13:10',
+        't4': '',
     }
 }
 
@@ -44,54 +72,82 @@ def generate_order(template_name, start_date, day_num):
     load_date = start_date + timedelta(days=day_num)
     unload_date = load_date + timedelta(days=1)
     ref = load_date.strftime('%Y-%m-%d')
-    content = f'''ZLECENIE TRANSPORTOWE
-=====================
-Data: {load_date.strftime('%d.%m.%Y')}
-Referencja: {ref}
-Klient: {t['client']}
-Cena: {t['price']}
 
-ZALADUNEK 1:
+    vehicle_line = ''
+    if t.get('vehicle_reg'):
+        vehicle_line = f'Nr rejestracyjny: {t["vehicle_reg"]}\n'
+
+    stops = f'''ZALADUNEK 1:
   Firma: {t['load_1_name']}
   Ulica: {t['load_1_street']}
   Miasto: {t['load_1_city']}
-  Godzina: {t['t1']}
+  Godzina: {t['t1']} ({load_date.strftime('%d.%m.%Y')})
 
-ROZLADUNEK 1:
+PRZELADUNEK / ROZLADUNEK 1:
   Firma: {t['unload_1_name']}
   Ulica: {t['unload_1_street']}
   Miasto: {t['unload_1_city']}
-  Godzina: {t['t2']} ({unload_date.strftime('%d.%m.%Y')})
+  Godzina: {t['t2']} ({unload_date.strftime('%d.%m.%Y') if t['t2'] else load_date.strftime('%d.%m.%Y')})
+'''
 
-ROZLADUNEK 2:
-  Firma: {t['unload_2_name']}
-  Ulica: {t['unload_2_street']}
-  Miasto: {t['unload_2_city']}
-  Godzina: {t['t3']} ({unload_date.strftime('%d.%m.%Y')})
-
+    if t.get('load_2_name'):
+        stops += f'''
 ZALADUNEK 2:
   Firma: {t['load_2_name']}
   Ulica: {t['load_2_street']}
   Miasto: {t['load_2_city']}
   Godzina: {t['t3']} ({unload_date.strftime('%d.%m.%Y')})
+'''
 
+    if t.get('unload_2_name') and not t.get('load_2_name'):
+        stops += f'''
+ROZLADUNEK 2 (POWROT):
+  Firma: {t['unload_2_name']}
+  Ulica: {t['unload_2_street']}
+  Miasto: {t['unload_2_city']}
+  Godzina: {t['t3']} ({unload_date.strftime('%d.%m.%Y')})
+'''
+    elif t.get('unload_2_name'):
+        stops += f'''
+ROZLADUNEK 2:
+  Firma: {t['unload_2_name']}
+  Ulica: {t['unload_2_street']}
+  Miasto: {t['unload_2_city']}
+  Godzina: {t['t3']} ({unload_date.strftime('%d.%m.%Y')})
+'''
+
+    if t.get('unload_3_name'):
+        stops += f'''
 ROZLADUNEK 3:
   Firma: {t['unload_3_name']}
   Ulica: {t['unload_3_street']}
   Miasto: {t['unload_3_city']}
   Godzina: {t['t4']} ({unload_date.strftime('%d.%m.%Y')})
+'''
 
+    if t.get('unload_4_name'):
+        stops += f'''
 ROZLADUNEK 4 (POWROT):
   Firma: {t['unload_4_name']}
   Ulica: {t['unload_4_street']}
   Miasto: {t['unload_4_city']}
+'''
 
-TRASA: {t['load_1_city']} -> via {t['via_text']} -> {t['unload_2_city']} -> {t['unload_3_city']} -> powrot
+    content = f'''ZLECENIE TRANSPORTOWE
+=====================
+Szablon: {template_name}
+Data: {load_date.strftime('%d.%m.%Y')}
+Referencja: {ref}
+Klient: {t['client']}
+{vehicle_line}Cena: {t['price']}
+
+{stops}
+TRASA: {t['load_1_city']} -> via {t['via_text']} -> {t['unload_1_city']} -> powrot
 '''
     return ref, content
 
 st.title('Generator zlecen transportowych')
-st.write('Wpisz np. **Landsberg 20 dni** lub wypelnij formularz ponizej.')
+st.write('Wybierz szablon, date startowa i liczbe dni, nastepnie kliknij Generuj.')
 
 col1, col2, col3 = st.columns(3)
 with col1:
