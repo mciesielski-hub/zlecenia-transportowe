@@ -48,9 +48,19 @@ TEMPLATES = {
         'price': '723,71 EUR',
         'via_text': 'Schonefeld',
         'stops': [
-            {'type': 'ZALADUNEK',          'name': 'Dachser Bremen',      'street': 'Senator-Blase-Strasse 23', 'city': '28197; Bremen; DE',     'time': '17:00', 'day_offset': 0},
-            {'type': 'ROZLADUNEK',         'name': 'Dachser Schonefeld',  'street': 'Thomas-Dachser-Allee 2',  'city': '12529; Schonefeld; DE', 'time': '01:00', 'day_offset': 1},
-            {'type': 'ROZLADUNEK POWROT',  'name': 'Dachser Sp. z o.o.', 'street': 'Drukarska',               'city': '60-023; Koninko; PL',   'time': '03:00', 'day_offset': 1},
+            {'type': 'ZALADUNEK',          'name': 'Dachser Bremen',     'street': 'Senator-Blase-Strasse 23', 'city': '28197; Bremen; DE',     'time': '17:00', 'day_offset': 0},
+            {'type': 'ROZLADUNEK',         'name': 'Dachser Schonefeld', 'street': 'Thomas-Dachser-Allee 2',  'city': '12529; Schonefeld; DE', 'time': '01:00', 'day_offset': 1},
+            {'type': 'ROZLADUNEK POWROT',  'name': 'Dachser Sp. z o.o.','street': 'Drukarska',               'city': '60-023; Koninko; PL',   'time': '03:00', 'day_offset': 1},
+        ]
+    },
+    'Koninko - Bremen': {
+        'client': 'Klient: Id oddzialu: 24, Pelna nazwa oddzialu: Dachser Koninko, Kraj: PL, Kod pocztowy: 95-010, Miasto: Strykow',
+        'price': '672 EUR',
+        'via_text': 'Hamburg',
+        'stops': [
+            {'type': 'ZALADUNEK',          'name': 'Dachser Sp. z o.o.',        'street': 'Drukarska',         'city': '60-023; Koninko; PL', 'time': '12:34', 'day_offset': 0},
+            {'type': 'ROZLADUNEK',         'name': 'Dachser Food Logistics Hamburg', 'street': 'Rungedamm 34', 'city': '21035; Hamburg; DE',  'time': '12:35', 'day_offset': 0},
+            {'type': 'ROZLADUNEK POWROT',  'name': 'Dachser Bremen',             'street': 'Senator-Blase-Strasse 23', 'city': '28197; Bremen; DE', 'time': '12:34', 'day_offset': 1},
         ]
     }
 }
