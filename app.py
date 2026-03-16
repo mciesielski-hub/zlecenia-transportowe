@@ -58,9 +58,21 @@ TEMPLATES = {
         'price': '672 EUR',
         'via_text': 'Hamburg',
         'stops': [
-            {'type': 'ZALADUNEK',          'name': 'Dachser Sp. z o.o.',        'street': 'Drukarska',         'city': '60-023; Koninko; PL', 'time': '12:34', 'day_offset': 0},
-            {'type': 'ROZLADUNEK',         'name': 'Dachser Food Logistics Hamburg', 'street': 'Rungedamm 34', 'city': '21035; Hamburg; DE',  'time': '12:35', 'day_offset': 0},
-            {'type': 'ROZLADUNEK POWROT',  'name': 'Dachser Bremen',             'street': 'Senator-Blase-Strasse 23', 'city': '28197; Bremen; DE', 'time': '12:34', 'day_offset': 1},
+            {'type': 'ZALADUNEK',          'name': 'Dachser Sp. z o.o.',            'street': 'Drukarska',               'city': '60-023; Koninko; PL', 'time': '12:34', 'day_offset': 0},
+            {'type': 'ROZLADUNEK',         'name': 'Dachser Food Logistics Hamburg', 'street': 'Rungedamm 34',            'city': '21035; Hamburg; DE',  'time': '12:35', 'day_offset': 0},
+            {'type': 'ROZLADUNEK POWROT',  'name': 'Dachser Bremen',                'street': 'Senator-Blase-Strasse 23','city': '28197; Bremen; DE',   'time': '12:34', 'day_offset': 1},
+        ]
+    },
+    'Willebroek': {
+        'client': 'Klient: Id oddzialu: 151, Pelna nazwa oddzialu: Dachser Langenhagen, Kraj: DE, Kod pocztowy: 30855, Miasto: Langenhagen',
+        'price': '1991 EUR',
+        'via_text': 'Schonefeld / Magdeburg / Langenhagen',
+        'stops': [
+            {'type': 'ZALADUNEK',          'name': 'Dachser',                          'street': 'Schoondonkweg',          'city': '2830; Willebroek; BE',   'time': '16:00', 'day_offset': 0},
+            {'type': 'ROZLADUNEK',         'name': 'Dachser Schonefeld',               'street': 'Thomas-Dachser-Allee 2', 'city': '12529; Schonefeld; DE',  'time': '05:00', 'day_offset': 1},
+            {'type': 'ROZLADUNEK',         'name': 'Dachser GmbH Logistikzentrum Magdeburg', 'street': 'Wormlitzer Strasse 2', 'city': '39126; Magdeburg; DE', 'time': '17:00', 'day_offset': 1},
+            {'type': 'ROZLADUNEK',         'name': 'Dachser Langenhagen',              'street': 'Kemptener Strasse',      'city': '30855; Langenhagen; DE', 'time': '19:00', 'day_offset': 1},
+            {'type': 'ROZLADUNEK POWROT',  'name': 'Dachser',                          'street': 'Schoondonkweg',          'city': '2830; Willebroek; BE',   'time': '04:00', 'day_offset': 2},
         ]
     }
 }
