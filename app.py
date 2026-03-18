@@ -3,7 +3,7 @@ from datetime import date, timedelta
 import io
 import zipfile
 
-DEFAULT_CLIENT = 'Klient: Id oddzialu: 24, Pelna nazwa oddzialu: Dachser Koninko, Kraj: PL, Kod pocztowy: 95-010, Miasto: Strykow, NIP 7281006020'
+DEFAULT_CLIENT = 'Klient: Id oddzialu: 24, Pelna nazwa oddzialu: Dachser Koninko, Kraj: PL, Kod pocztowy: 95-010, Miasto: Strykow, NIP: 7281006020'
 DEFAULT_PRICE = '892 EUR'
 
 TEMPLATES = {
@@ -12,12 +12,12 @@ TEMPLATES = {
         'price': DEFAULT_PRICE,
         'via_text': 'Slubice',
         'stops': [
-            {'type': 'ZALADUNEK',          'name': 'Dachser Koninko',    'street': 'Drukarska',              'city': '60-023; Koninko; PL',   'time': '18:30', 'day_offset': 0},
-            {'type': 'ROZLADUNEK',         'name': 'Dachser Radeburg',   'street': 'Thomas-Dachser-Str 1',   'city': '01471; Radeburg; DE',   'time': '02:30', 'day_offset': 1},
-            {'type': 'ROZLADUNEK',         'name': 'Dachser Landsberg',  'street': 'Brehnaer Strasse 4',     'city': '06188; Landsberg; DE',  'time': '05:00', 'day_offset': 1},
-            {'type': 'ZALADUNEK',          'name': 'Dachser Landsberg',  'street': 'Brehnaer Strasse 4',     'city': '06188; Landsberg; DE',  'time': '05:00', 'day_offset': 1},
-            {'type': 'ROZLADUNEK',         'name': 'Dachser Schonefeld', 'street': 'Thomas-Dachser-Allee 2', 'city': '12529; Schonefeld; DE', 'time': '18:00', 'day_offset': 1},
-            {'type': 'ROZLADUNEK POWROT',  'name': 'Dachser Koninko',    'street': 'Drukarska',              'city': '60-023; Koninko; PL',   'time': '',      'day_offset': 2},
+            {'type': 'ZALADUNEK',        'name': 'Dachser Koninko',    'street': 'Drukarska',              'city': '60-023; Koninko; PL',      'time': '18:30', 'day_offset': 0},
+            {'type': 'ROZLADUNEK',       'name': 'Dachser Radeburg',   'street': 'Thomas-Dachser-Str 1',   'city': '01471; Radeburg; DE',      'time': '02:30', 'day_offset': 1},
+            {'type': 'ROZLADUNEK',       'name': 'Dachser Landsberg',  'street': 'Brehnaer Strasse 4',     'city': '06188; Landsberg; DE',     'time': '05:00', 'day_offset': 1},
+            {'type': 'ZALADUNEK',        'name': 'Dachser Landsberg',  'street': 'Brehnaer Strasse 4',     'city': '06188; Landsberg; DE',     'time': '05:00', 'day_offset': 1},
+            {'type': 'ROZLADUNEK',       'name': 'Dachser Schonefeld', 'street': 'Thomas-Dachser-Allee 2', 'city': '12529; Schonefeld; DE',    'time': '18:00', 'day_offset': 1},
+            {'type': 'ROZLADUNEK POWROT','name': 'Dachser Koninko',    'street': 'Drukarska',              'city': '60-023; Koninko; PL',      'time': '',      'day_offset': 2},
         ]
     },
     'DSV Eupen': {
@@ -26,9 +26,9 @@ TEMPLATES = {
         'vehicle_reg': 'OKR2CN5',
         'via_text': 'Neunkirchen',
         'stops': [
-            {'type': 'ZALADUNEK',          'name': 'Schenker',               'street': 'Siebeponisweg 9', 'city': '4700; Eupen; BE',        'time': '13:10', 'day_offset': 0},
-            {'type': 'PRZELADUNEK',        'name': 'Schenker Deutschland AG','street': 'Boxbergweg 6',    'city': '66538; Neunkirchen; DE', 'time': '21:10', 'day_offset': 1},
-            {'type': 'ROZLADUNEK POWROT',  'name': 'Schenker',               'street': 'Siebeponisweg 9', 'city': '4700; Eupen; BE',        'time': '13:10', 'day_offset': 2},
+            {'type': 'ZALADUNEK',        'name': 'Schenker',               'street': 'Siebeponisweg 9',  'city': '4700; Eupen; BE',              'time': '13:10', 'day_offset': 0},
+            {'type': 'PRZELADUNEK',      'name': 'Schenker Deutschland AG','street': 'Boxbergweg 6',     'city': '66538; Neunkirchen; DE',       'time': '21:10', 'day_offset': 1},
+            {'type': 'ROZLADUNEK POWROT','name': 'Schenker',               'street': 'Siebeponisweg 9',  'city': '4700; Eupen; BE',              'time': '13:10', 'day_offset': 2},
         ]
     },
     'Dachser Mouscron': {
@@ -36,11 +36,11 @@ TEMPLATES = {
         'price': '1626 EUR',
         'via_text': 'Alsdorf / Koln',
         'stops': [
-            {'type': 'ZALADUNEK',          'name': 'Dachser Mouscron', 'street': 'Hansestrasse 52',        'city': '7700; Mouscron; BE', 'time': '21:00', 'day_offset': 0},
-            {'type': 'ROZLADUNEK',         'name': 'Dachser Alsdorf',  'street': 'Thomas-Dachser-Str 1',   'city': '52477; Alsdorf; DE', 'time': '01:30', 'day_offset': 1},
-            {'type': 'ROZLADUNEK',         'name': 'Dachser Koln',     'street': 'Rue du Berger',          'city': '51149; Koln; DE',    'time': '03:00', 'day_offset': 1},
-            {'type': 'ZALADUNEK',          'name': 'Dachser Koln',     'street': 'Rue du Berger',          'city': '51149; Koln; DE',    'time': '19:00', 'day_offset': 1},
-            {'type': 'ROZLADUNEK POWROT',  'name': 'Dachser Wissous',  'street': 'Hansestrasse 52',        'city': '91320; Wissous; FR', 'time': '02:30', 'day_offset': 2},
+            {'type': 'ZALADUNEK',        'name': 'Dachser Mouscron',  'street': 'Hansestrasse 52',         'city': '7700; Mouscron; BE',        'time': '21:00', 'day_offset': 0},
+            {'type': 'ROZLADUNEK',       'name': 'Dachser Alsdorf',   'street': 'Thomas-Dachser-Str 1',   'city': '52477; Alsdorf; DE',        'time': '01:30', 'day_offset': 1},
+            {'type': 'ROZLADUNEK',       'name': 'Dachser Koln',      'street': 'Rue du Berger',           'city': '51149; Koln; DE',           'time': '03:00', 'day_offset': 1},
+            {'type': 'ZALADUNEK',        'name': 'Dachser Koln',      'street': 'Rue du Berger',           'city': '51149; Koln; DE',           'time': '19:00', 'day_offset': 1},
+            {'type': 'ROZLADUNEK POWROT','name': 'Dachser Wissous',   'street': 'Hansestrasse 52',         'city': '91320; Wissous; FR',        'time': '02:30', 'day_offset': 2},
         ]
     },
     'Bremen - Koninko': {
@@ -48,9 +48,9 @@ TEMPLATES = {
         'price': '723,71 EUR',
         'via_text': 'Schonefeld',
         'stops': [
-            {'type': 'ZALADUNEK',          'name': 'Dachser Bremen',     'street': 'Senator-Blase-Strasse 23', 'city': '28197; Bremen; DE',     'time': '17:00', 'day_offset': 0},
-            {'type': 'ROZLADUNEK',         'name': 'Dachser Schonefeld', 'street': 'Thomas-Dachser-Allee 2',  'city': '12529; Schonefeld; DE', 'time': '01:00', 'day_offset': 1},
-            {'type': 'ROZLADUNEK POWROT',  'name': 'Dachser Sp. z o.o.','street': 'Drukarska',               'city': '60-023; Koninko; PL',   'time': '03:00', 'day_offset': 1},
+            {'type': 'ZALADUNEK',        'name': 'Dachser Bremen',     'street': 'Senator-Blase-Strasse 23', 'city': '28197; Bremen; DE',     'time': '17:00', 'day_offset': 0},
+            {'type': 'ROZLADUNEK',       'name': 'Dachser Schonefeld', 'street': 'Thomas-Dachser-Allee 2',  'city': '12529; Schonefeld; DE', 'time': '01:00', 'day_offset': 1},
+            {'type': 'ROZLADUNEK POWROT','name': 'Dachser Sp. z o.o.','street': 'Drukarska',                'city': '60-023; Koninko; PL',   'time': '03:00', 'day_offset': 1},
         ]
     },
     'Koninko - Bremen': {
@@ -58,9 +58,9 @@ TEMPLATES = {
         'price': '672 EUR',
         'via_text': 'Hamburg',
         'stops': [
-            {'type': 'ZALADUNEK',          'name': 'Dachser Sp. z o.o.',            'street': 'Drukarska',               'city': '60-023; Koninko; PL', 'time': '12:34', 'day_offset': 0},
-            {'type': 'ROZLADUNEK',         'name': 'Dachser Food Logistics Hamburg', 'street': 'Rungedamm 34',            'city': '21035; Hamburg; DE',  'time': '12:35', 'day_offset': 0},
-            {'type': 'ROZLADUNEK POWROT',  'name': 'Dachser Bremen',                'street': 'Senator-Blase-Strasse 23','city': '28197; Bremen; DE',   'time': '12:34', 'day_offset': 1},
+            {'type': 'ZALADUNEK',        'name': 'Dachser Sp. z o.o.',             'street': 'Drukarska',               'city': '60-023; Koninko; PL',  'time': '12:34', 'day_offset': 0},
+            {'type': 'ROZLADUNEK',       'name': 'Dachser Food Logistics Hamburg', 'street': 'Rungedamm 34',             'city': '21035; Hamburg; DE',   'time': '12:35', 'day_offset': 0},
+            {'type': 'ROZLADUNEK POWROT','name': 'Dachser Bremen',                 'street': 'Senator-Blase-Strasse 23', 'city': '28197; Bremen; DE',    'time': '12:34', 'day_offset': 1},
         ]
     },
     'Willebroek': {
@@ -68,11 +68,11 @@ TEMPLATES = {
         'price': '1991 EUR',
         'via_text': 'Schonefeld / Magdeburg / Langenhagen',
         'stops': [
-            {'type': 'ZALADUNEK',          'name': 'Dachser',                          'street': 'Schoondonkweg',          'city': '2830; Willebroek; BE',   'time': '16:00', 'day_offset': 0},
-            {'type': 'ROZLADUNEK',         'name': 'Dachser Schonefeld',               'street': 'Thomas-Dachser-Allee 2', 'city': '12529; Schonefeld; DE',  'time': '05:00', 'day_offset': 1},
-            {'type': 'ROZLADUNEK',         'name': 'Dachser GmbH Logistikzentrum Magdeburg', 'street': 'Wormlitzer Strasse 2', 'city': '39126; Magdeburg; DE', 'time': '17:00', 'day_offset': 1},
-            {'type': 'ROZLADUNEK',         'name': 'Dachser Langenhagen',              'street': 'Kemptener Strasse',      'city': '30855; Langenhagen; DE', 'time': '19:00', 'day_offset': 1},
-            {'type': 'ROZLADUNEK POWROT',  'name': 'Dachser',                          'street': 'Schoondonkweg',          'city': '2830; Willebroek; BE',   'time': '04:00', 'day_offset': 2},
+            {'type': 'ZALADUNEK',        'name': 'Dachser',                               'street': 'Schoondonkweg',            'city': '2830; Willebroek; BE',      'time': '16:00', 'day_offset': 0},
+            {'type': 'ROZLADUNEK',       'name': 'Dachser Schonefeld',                    'street': 'Thomas-Dachser-Allee 2',  'city': '12529; Schonefeld; DE',     'time': '05:00', 'day_offset': 1},
+            {'type': 'ROZLADUNEK',       'name': 'Dachser GmbH Logistikzentrum Magdeburg','street': 'Wormlitzer Strasse 2',     'city': '39126; Magdeburg; DE',      'time': '17:00', 'day_offset': 1},
+            {'type': 'ROZLADUNEK',       'name': 'Dachser Langenhagen',                   'street': 'Kemptener Strasse',        'city': '30855; Langenhagen; DE',    'time': '19:00', 'day_offset': 1},
+            {'type': 'ROZLADUNEK POWROT','name': 'Dachser',                               'street': 'Schoondonkweg',            'city': '2830; Willebroek; BE',      'time': '04:00', 'day_offset': 2},
         ]
     }
 }
@@ -119,7 +119,6 @@ def generate_order(template_name, start_date, day_num):
 
 st.title('Generator zlecen transportowych')
 st.write('Wybierz szablon, date startowa i liczbe dni, nastepnie kliknij Generuj.')
-
 col1, col2, col3 = st.columns(3)
 with col1:
     template = st.selectbox('Szablon', list(TEMPLATES.keys()))
@@ -127,7 +126,6 @@ with col2:
     start = st.date_input('Data startowa', value=date.today())
 with col3:
     days = st.number_input('Liczba dni', min_value=1, max_value=90, value=20)
-
 if st.button('Generuj zlecenia'):
     orders = []
     day_counter = 0
