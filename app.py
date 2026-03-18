@@ -3,7 +3,7 @@ from datetime import date, timedelta
 import io
 import zipfile
 
-DEFAULT_CLIENT = 'Klient: Id oddzialu: 24, Pelna nazwa oddzialu: Dachser Koninko, Kraj: PL, Kod pocztowy: 95-010, Miasto: Strykow, NIP: 7281006020'
+DEFAULT_CLIENT = 'Id oddzialu: 24, Pelna nazwa oddzialu: Dachser Koninko, Kraj: PL, Kod pocztowy: 95-010, Miasto: Strykow, NIP: 7281006020'
 DEFAULT_PRICE = '892 EUR'
 
 TEMPLATES = {
@@ -44,7 +44,7 @@ TEMPLATES = {
         ]
     },
     'Bremen - Koninko': {
-        'client': 'Klient: Id oddzialu: 20, Pelna nazwa oddzialu: Dachser Bremen, Kraj: DE, Kod pocztowy: 28197, Miasto: Bremen',
+        'client': 'Id oddzialu: 20, Pelna nazwa oddzialu: Dachser Bremen, Kraj: DE, Kod pocztowy: 28197, Miasto: Bremen',
         'price': '723,71 EUR',
         'via_text': 'Schonefeld',
         'stops': [
@@ -54,7 +54,7 @@ TEMPLATES = {
         ]
     },
     'Koninko - Bremen': {
-        'client': 'Klient: Id oddzialu: 24, Pelna nazwa oddzialu: Dachser Koninko, Kraj: PL, Kod pocztowy: 95-010, Miasto: Strykow, NIP: 7281006020',
+        'client': 'Id oddzialu: 24, Pelna nazwa oddzialu: Dachser Koninko, Kraj: PL, Kod pocztowy: 95-010, Miasto: Strykow, NIP: 7281006020',
         'price': '672 EUR',
         'via_text': 'Hamburg',
         'stops': [
@@ -64,7 +64,7 @@ TEMPLATES = {
         ]
     },
     'Willebroek': {
-        'client': 'Klient: Id oddzialu: 151, Pelna nazwa oddzialu: Dachser Langenhagen, Kraj: DE, Kod pocztowy: 30855, Miasto: Langenhagen',
+        'client': 'Id oddzialu: 151, Pelna nazwa oddzialu: Dachser Langenhagen, Kraj: DE, Kod pocztowy: 30855, Miasto: Langenhagen',
         'price': '1991 EUR',
         'via_text': 'Schonefeld / Magdeburg / Langenhagen',
         'stops': [
