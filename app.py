@@ -64,7 +64,7 @@ TEMPLATES = {
         ]
     },
     'Willebroek': {
-        'client': 'Id oddzialu: 151, Pelna nazwa oddzialu: Dachser Langenhagen, Kraj: DE, Kod pocztowy: 30855, Miasto: Langenhagen',
+        'client': 'Id oddzialu: 151, Pelna nazwa oddzialu: Dachser Langenhagen, Kraj: DE, Kod pocztowy: 30855, Miasto: Langenhagen, NIP 815512007',
         'price': '1991 EUR',
         'via_text': 'Schonefeld / Magdeburg / Langenhagen',
         'stops': [
