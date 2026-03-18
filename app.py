@@ -54,7 +54,7 @@ TEMPLATES = {
         ]
     },
     'Koninko - Bremen': {
-        'client': 'Klient: Id oddzialu: 24, Pelna nazwa oddzialu: Dachser Koninko, Kraj: PL, Kod pocztowy: 95-010, Miasto: Strykow, NIP 7281006020',
+        'client': 'Klient: Id oddzialu: 24, Pelna nazwa oddzialu: Dachser Koninko, Kraj: PL, Kod pocztowy: 95-010, Miasto: Strykow, NIP: 7281006020',
         'price': '672 EUR',
         'via_text': 'Hamburg',
         'stops': [
