@@ -83,7 +83,7 @@ def is_workday(d):
 def generate_order(template_name, start_date, day_num):
     t = TEMPLATES[template_name]
     load_date = start_date + timedelta(days=day_num)
-    ref = load_date.strftime('%Y-%m-%d')
+    ref = load_date.strftime('%Y-%m-%d') + template_name
     client = t['client']
     price = t['price']
     via = t['via_text']
