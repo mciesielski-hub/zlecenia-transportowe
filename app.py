@@ -17,7 +17,7 @@ TEMPLATES = {
             {'type': 'ROZLADUNEK',       'name': 'Dachser Landsberg',  'street': 'Brehnaer Strasse 4',     'city': '06188; Landsberg; DE',     'time': '05:00', 'day_offset': 1},
             {'type': 'ZALADUNEK',        'name': 'Dachser Landsberg',  'street': 'Brehnaer Strasse 4',     'city': '06188; Landsberg; DE',     'time': '05:00', 'day_offset': 1},
             {'type': 'ROZLADUNEK',       'name': 'Dachser Schonefeld', 'street': 'Thomas-Dachser-Allee 2', 'city': '12529; Schonefeld; DE',    'time': '18:00', 'day_offset': 1},
-            {'type': 'ROZLADUNEK POWROT','name': 'Dachser Koninko',    'street': 'Drukarska',              'city': '60-023; Koninko; PL',      'time': '',      'day_offset': 2},
+            {'type': 'ROZLADUNEK POWROT','name': 'Dachser Koninko',    'street': 'Drukarska',              'city': '60-023; Koninko; PL',      'time': '05:00', 'day_offset': 2},
         ]
     },
     'DSV Eupen': {
