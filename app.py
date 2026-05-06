@@ -27,8 +27,8 @@ TEMPLATES = {
         'via_text': 'Neunkirchen',
         'stops': [
             {'type': 'ZALADUNEK',        'name': 'Schenker',               'street': 'Siebeponisweg 9',  'city': '4700; Eupen; BE',              'time': '13:10', 'day_offset': 0},
-            {'type': 'PRZELADUNEK',      'name': 'Schenker Deutschland AG','street': 'Boxbergweg 6',     'city': '66538; Neunkirchen; DE',       'time': '21:10', 'day_offset': 1},
-            {'type': 'ROZLADUNEK POWROT','name': 'Schenker',               'street': 'Siebeponisweg 9',  'city': '4700; Eupen; BE',              'time': '13:10', 'day_offset': 2},
+            {'type': 'PRZELADUNEK',      'name': 'Schenker Deutschland AG','street': 'Boxbergweg 6',     'city': '66538; Neunkirchen; DE',       'time': '21:10', 'day_offset': 0},
+            {'type': 'ROZLADUNEK POWROT','name': 'Schenker',               'street': 'Siebeponisweg 9',  'city': '4700; Eupen; BE',              'time': '13:10', 'day_offset': 1},
         ]
     },
     'Dachser Mouscron': {
