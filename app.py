@@ -63,7 +63,16 @@ TEMPLATES = {
             {'type': 'ROZLADUNEK POWROT','name': 'Dachser Bremen',                 'street': 'Senator-Blase-Strasse 23', 'city': '28197; Bremen; DE',    'time': '12:34', 'day_offset': 1},
         ]
     },
-    'ACE': {         'client': 'ACE Logistics Estonia AS; Tallinn, NIP 10067413',         'price': '1539,4 EUR',         'via_text': 'Schonefeld',         'stops': [             {'type': 'ZALADUNEK',         'name': 'ACE Logistics Estonia AS', 'street': 'Rukki tee 12',            'city': '75306; Lehmja; EE',      'time': '13:31', 'day_offset': 0},             {'type': 'ROZLADUNEK POWROT', 'name': 'Dachser Schonefeld',        'street': 'Thomas-Dachser-Allee 2', 'city': '12529; Schonefeld; DE',   'time': '13:31', 'day_offset': 3},         ]     },     'Willebroek': {
+    'ACE': {
+        'client': 'ACE Logistics Estonia AS; Tallinn, NIP 10067413',
+        'price': '1539,4 EUR',
+        'via_text': 'Schonefeld',
+        'stops': [
+            {'type': 'ZALADUNEK',        'name': 'ACE Logistics Estonia AS', 'street': 'Rukki tee 12',            'city': '75306; Lehmja; EE',      'time': '13:31', 'day_offset': 0},
+            {'type': 'ROZLADUNEK POWROT','name': 'Dachser Schonefeld',        'street': 'Thomas-Dachser-Allee 2', 'city': '12529; Schonefeld; DE',   'time': '13:31', 'day_offset': 3},
+        ]
+    },
+    'Willebroek': {
         'client': 'Id oddzialu: 151, Pelna nazwa oddzialu: Dachser Langenhagen, Kraj: DE, Kod pocztowy: 30855, Miasto: Langenhagen, NIP 815512007',
         'price': '1991 EUR',
         'via_text': 'Schonefeld / Magdeburg / Langenhagen',
@@ -73,6 +82,23 @@ TEMPLATES = {
             {'type': 'ROZLADUNEK',       'name': 'Dachser GmbH Logistikzentrum Magdeburg','street': 'Wormlitzer Strasse 2',     'city': '39126; Magdeburg; DE',      'time': '17:00', 'day_offset': 1},
             {'type': 'ROZLADUNEK',       'name': 'Dachser Langenhagen',                   'street': 'Kemptener Strasse',        'city': '30855; Langenhagen; DE',    'time': '19:00', 'day_offset': 1},
             {'type': 'ROZLADUNEK POWROT','name': 'Dachser',                               'street': 'Schoondonkweg',            'city': '2830; Willebroek; BE',      'time': '04:00', 'day_offset': 2},
+        ]
+    },
+    'Hamburg - Nurnberg - Rho': {
+        'client': 'Id oddzialu: 20, Pelna nazwa oddzialu: Dachser Hamburg, Kraj: DE, Kod pocztowy: 21035, Miasto: Hamburg',
+        'price': '2450 EUR',
+        'via_text': 'Landsberg / Nürnberg / Rho',
+        'stops': [
+            {'type': 'ZALADUNEK',        'name': 'Dachser HH 2',           'street': 'Rungedamm 34',               'city': '21035; Hamburg; DE',       'time': '18:00', 'day_offset': 1},
+            {'type': 'PRZELADUNEK',      'name': 'Dachser Landsberg',      'street': 'Brehnaer Straße 4',          'city': '06188; Landsberg; DE',     'time': '23:50', 'day_offset': 1},
+            {'type': 'ROZLADUNEK',       'name': 'Dachser Nurnberg',       'street': 'Thomas-Dachser-Straße 4',    'city': '90475; Nürnberg; DE',      'time': '04:00', 'day_offset': 2},
+            {'type': 'ZALADUNEK',        'name': 'Dachser Nurnberg',       'street': 'Thomas-Dachser-Straße 4',    'city': '90475; Nürnberg; DE',      'time': '04:30', 'day_offset': 2},
+            {'type': 'PRZELADUNEK',      'name': 'Fercam Rho',             'street': 'Via Terrazzano',              'city': '20017; Rho; IT',           'time': '15:00', 'day_offset': 2},
+            {'type': 'ZALADUNEK',        'name': 'Fercam Rho',             'street': 'Via Terrazzano',              'city': '20017; Rho; IT',           'time': '02:00', 'day_offset': 5},
+            {'type': 'ROZLADUNEK',       'name': 'Dachser Nurnberg',       'street': 'Thomas-Dachser-Straße 4',    'city': '90475; Nürnberg; DE',      'time': '16:00', 'day_offset': 5},
+            {'type': 'ZALADUNEK',        'name': 'Dachser Nurnberg',       'street': 'Thomas-Dachser-Straße 4',    'city': '90475; Nürnberg; DE',      'time': '18:30', 'day_offset': 5},
+            {'type': 'ROZLADUNEK',       'name': 'Dachser Hamburg',        'street': 'Wilhelm-Iwan-Ring 21',       'city': '21035; Hamburg; DE',       'time': '04:00', 'day_offset': 6},
+            {'type': 'ROZLADUNEK POWROT','name': 'Dachser HH 2',           'street': 'Rungedamm 34',               'city': '21035; Hamburg; DE',       'time': '04:30', 'day_offset': 6},
         ]
     }
 }
