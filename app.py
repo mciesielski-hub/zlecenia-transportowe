@@ -86,19 +86,19 @@ TEMPLATES = {
     },
     'Hamburg - Nurnberg - Rho': {
         'client': 'Id oddzialu: 20, Pelna nazwa oddzialu: Dachser Hamburg, Kraj: DE, Kod pocztowy: 21035, Miasto: Hamburg',
-        'price': '2450 EUR',
+        'price': '4906 EUR',
         'via_text': 'Landsberg / Nürnberg / Rho',
         'stops': [
-            {'type': 'ZALADUNEK',        'name': 'Dachser HH 2',           'street': 'Rungedamm 34',               'city': '21035; Hamburg; DE',       'time': '18:00', 'day_offset': 1},
-            {'type': 'PRZELADUNEK',      'name': 'Dachser Landsberg',      'street': 'Brehnaer Straße 4',          'city': '06188; Landsberg; DE',     'time': '23:50', 'day_offset': 1},
-            {'type': 'ROZLADUNEK',       'name': 'Dachser Nurnberg',       'street': 'Thomas-Dachser-Straße 4',    'city': '90475; Nürnberg; DE',      'time': '04:00', 'day_offset': 2},
-            {'type': 'ZALADUNEK',        'name': 'Dachser Nurnberg',       'street': 'Thomas-Dachser-Straße 4',    'city': '90475; Nürnberg; DE',      'time': '04:30', 'day_offset': 2},
-            {'type': 'PRZELADUNEK',      'name': 'Fercam Rho',             'street': 'Via Terrazzano',              'city': '20017; Rho; IT',           'time': '15:00', 'day_offset': 2},
-            {'type': 'ZALADUNEK',        'name': 'Fercam Rho',             'street': 'Via Terrazzano',              'city': '20017; Rho; IT',           'time': '02:00', 'day_offset': 5},
-            {'type': 'ROZLADUNEK',       'name': 'Dachser Nurnberg',       'street': 'Thomas-Dachser-Straße 4',    'city': '90475; Nürnberg; DE',      'time': '16:00', 'day_offset': 5},
-            {'type': 'ZALADUNEK',        'name': 'Dachser Nurnberg',       'street': 'Thomas-Dachser-Straße 4',    'city': '90475; Nürnberg; DE',      'time': '18:30', 'day_offset': 5},
-            {'type': 'ROZLADUNEK',       'name': 'Dachser Hamburg',        'street': 'Wilhelm-Iwan-Ring 21',       'city': '21035; Hamburg; DE',       'time': '04:00', 'day_offset': 6},
-            {'type': 'ROZLADUNEK POWROT','name': 'Dachser HH 2',           'street': 'Rungedamm 34',               'city': '21035; Hamburg; DE',       'time': '04:30', 'day_offset': 6},
+            {'type': 'ZALADUNEK',        'name': 'Dachser HH 2',           'street': 'Rungedamm 34',               'city': '21035; Hamburg; DE',       'time': '18:00', 'day_offset': 0},
+            {'type': 'PRZELADUNEK',      'name': 'Dachser Landsberg',      'street': 'Brehnaer Straße 4',          'city': '06188; Landsberg; DE',     'time': '23:50', 'day_offset': 0},
+            {'type': 'ROZLADUNEK',       'name': 'Dachser Nurnberg',       'street': 'Thomas-Dachser-Straße 4',    'city': '90475; Nürnberg; DE',      'time': '04:00', 'day_offset': 1},
+            {'type': 'ZALADUNEK',        'name': 'Dachser Nurnberg',       'street': 'Thomas-Dachser-Straße 4',    'city': '90475; Nürnberg; DE',      'time': '04:30', 'day_offset': 1},
+            {'type': 'PRZELADUNEK',      'name': 'Fercam Rho',             'street': 'Via Terrazzano',              'city': '20017; Rho; IT',           'time': '15:00', 'day_offset': 1},
+            {'type': 'ZALADUNEK',        'name': 'Fercam Rho',             'street': 'Via Terrazzano',              'city': '20017; Rho; IT',           'time': '02:00', 'day_offset': 2},
+            {'type': 'ROZLADUNEK',       'name': 'Dachser Nurnberg',       'street': 'Thomas-Dachser-Straße 4',    'city': '90475; Nürnberg; DE',      'time': '16:00', 'day_offset': 2},
+            {'type': 'ZALADUNEK',        'name': 'Dachser Nurnberg',       'street': 'Thomas-Dachser-Straße 4',    'city': '90475; Nürnberg; DE',      'time': '18:30', 'day_offset': 2},
+            {'type': 'ROZLADUNEK',       'name': 'Dachser Hamburg',        'street': 'Wilhelm-Iwan-Ring 21',       'city': '21035; Hamburg; DE',       'time': '04:00', 'day_offset': 3},
+            {'type': 'ROZLADUNEK POWROT','name': 'Dachser HH 2',           'street': 'Rungedamm 34',               'city': '21035; Hamburg; DE',       'time': '04:30', 'day_offset': 3},
         ]
     }
 }
